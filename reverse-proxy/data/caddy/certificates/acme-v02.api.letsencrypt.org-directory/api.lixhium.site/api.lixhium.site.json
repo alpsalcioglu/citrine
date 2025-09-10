@@ -1,0 +1,19 @@
+{
+	"sans": [
+		"api.lixhium.site"
+	],
+	"issuer_data": {
+		"url": "https://acme-v02.api.letsencrypt.org/acme/cert/05cdc8f6936f81cbb3878ffe2a54019c2e8a",
+		"ca": "https://acme-v02.api.letsencrypt.org/directory",
+		"account": "https://acme-v02.api.letsencrypt.org/acme/acct/2649713041",
+		"renewal_info": {
+			"suggestedWindow": {
+				"start": "2025-11-07T15:21:26Z",
+				"end": "2025-11-09T10:32:16Z"
+			},
+			"_uniqueIdentifier": "rkie3IcdRKBv2qLlYHQEeMKcAIA.Bc3I9pNvgcuzh4_-KlQBnC6K",
+			"_retryAfter": "2025-09-10T07:55:01.273932177Z",
+			"_selectedTime": "2025-11-07T19:23:51Z"
+		}
+	}
+}

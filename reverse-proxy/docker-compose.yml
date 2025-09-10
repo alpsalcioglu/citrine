@@ -1,0 +1,23 @@
+services:
+  caddy:
+    image: caddy:2
+    container_name: reverse-proxy-caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./data:/data
+      - ./config:/config
+    networks:
+      - server
+      - ui
+    restart: unless-stopped
+
+networks:
+  server:
+    external: true
+    name: server_default
+  ui:
+    external: true
+    name: citrineos-operator-ui_default

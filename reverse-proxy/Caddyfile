@@ -1,0 +1,25 @@
+csms.lixhium.site {
+  encode gzip
+
+  # Hasura GraphQL and WebSocket
+  @hasura path /v1/graphql*
+  reverse_proxy @hasura http://graphql-engine:8080
+
+  # Core HTTP API (strip prefix)
+  handle_path /core-api/* {
+    reverse_proxy http://citrine:8080
+  }
+
+  # MinIO (optional) (strip prefix)
+  handle_path /minio/* {
+    reverse_proxy http://minio:9000
+  }
+
+  # Default: serve the UI
+  reverse_proxy http://citrine-ui:3000
+}
+
+api.lixhium.site {
+  encode gzip
+  reverse_proxy http://citrine:8081
+}
